@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UITableViewController {
     var allWords = [String]()
     var usedWords = [String]()
+    var word: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,12 @@ class ViewController: UITableViewController {
             allWords = ["silkworm"]
         }
         
-        startGame()
+        if word == "" {
+            startGame()
+        } else {
+            title = word
+        }
+        
     }
     
    @objc func startGame() {
@@ -66,8 +72,8 @@ class ViewController: UITableViewController {
     func submit(_ answer: String) {
         let lowerAnswer = answer.lowercased()
         
-        let errorTitle: String
-        let errorMessage: String
+//        let errorTitle: String
+//        let errorMessage: String
         
         if isPossible(word: lowerAnswer) {
             if isOriginal(word: lowerAnswer) {
@@ -82,25 +88,20 @@ class ViewController: UITableViewController {
                         return
                     }
                     else {
-                        errorTitle = "Word too short"
-                        errorMessage = "Please enter the word more than 3 char."
-                        showErrorMessage(errTitle: errorTitle, errMessage: errorMessage)
+                        showErrorMessage(errTitle: "Word too short", errMessage: "Please enter the word more than 3 char.")
                     }
                 } else {
-                    errorTitle = "Word not reconized"
-                    errorMessage = "You can't just make them up, you know?"
-                    showErrorMessage(errTitle: errorTitle, errMessage: errorMessage)
+
+                    showErrorMessage(errTitle: "Word not reconized", errMessage: "You can't just make them up, you know?")
                 }
             } else {
-                errorTitle = "Word already used"
-                errorMessage = "Be more original!"
-                showErrorMessage(errTitle: errorTitle, errMessage: errorMessage)
+               
+                showErrorMessage(errTitle: "Word already used", errMessage: "Be more original!")
             }
         } else {
             guard let title = title else { return }
-            errorTitle = "Word not possible"
-            errorMessage = "You can't spell that word from \(title.lowercased())."
-            showErrorMessage(errTitle: errorTitle, errMessage: errorMessage)
+
+            showErrorMessage(errTitle: "Word not possible", errMessage: "You can't spell that word from \(title.lowercased()).")
         }
         
 //        let ac = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
@@ -128,14 +129,18 @@ class ViewController: UITableViewController {
     }
     
     func isTooShort(word: String) -> Bool {
-        return word.utf16.count > 3
+        return word.utf16.count >= 3
     }
     
     func isOriginal (word: String) -> Bool {
-        return !usedWords.contains(word)
+        return !usedWords.contains(word.lowercased())
     }
     
     func isReal (word: String) -> Bool {
+        
+        if self.word == word {
+            return false
+        }
         let checker = UITextChecker()
         let range = NSRange(location: 0, length: word.utf16.count)
         let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range,
