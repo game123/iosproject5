@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C266996D24FDCA510081F6D4 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = C266996C24FDCA510081F6D4 /* start.txt */; };
 		C29B3E1624FC8AB00048D16C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29B3E1524FC8AB00048D16C /* AppDelegate.swift */; };
 		C29B3E1824FC8AB00048D16C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29B3E1724FC8AB00048D16C /* SceneDelegate.swift */; };
 		C29B3E1A24FC8AB00048D16C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29B3E1924FC8AB00048D16C /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C266996C24FDCA510081F6D4 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 		C29B3E1224FC8AB00048D16C /* Project5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C29B3E1524FC8AB00048D16C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C29B3E1724FC8AB00048D16C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				C29B3E1E24FC8AB10048D16C /* Assets.xcassets */,
 				C29B3E2024FC8AB10048D16C /* LaunchScreen.storyboard */,
 				C29B3E2324FC8AB10048D16C /* Info.plist */,
+				C266996C24FDCA510081F6D4 /* start.txt */,
 			);
 			path = Project5;
 			sourceTree = "<group>";
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C29B3E2224FC8AB10048D16C /* LaunchScreen.storyboard in Resources */,
+				C266996D24FDCA510081F6D4 /* start.txt in Resources */,
 				C29B3E1F24FC8AB10048D16C /* Assets.xcassets in Resources */,
 				C29B3E1D24FC8AB00048D16C /* Main.storyboard in Resources */,
 			);
